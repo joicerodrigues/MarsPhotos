@@ -20,7 +20,7 @@ private val retrofit = Retrofit.Builder() // add o builder da retrofit para cria
 
 interface MarsApiService {
     @GET("photos") // informando que é uma solicitação get
-    suspend fun getPhotos(): String// recebe a string de resposta do serviço da Web.
+    suspend fun getPhotos(): List<MarsPhoto>// recebe a string de resposta do serviço da Web.
 }
 
 object MarsApi {

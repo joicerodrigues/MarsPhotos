@@ -28,20 +28,20 @@ import kotlinx.coroutines.launch
  */
 class OverviewViewModel : ViewModel() {
 
-    // The internal MutableLiveData that stores the status of the most recent request
+    // O MutableLiveData interno que armazena o status da solicitação mais recente
     private val _status = MutableLiveData<String>()
 
-    // The external immutable LiveData for the request status
+    // O LiveData externo imutável para o status da solicitação
     val status: LiveData<String> = _status
     /**
-     * Call getMarsPhotos() on init so we can display status immediately.
+     * Chamando getMarsPhotos() no init para que possamos exibir o status imediatamente.
      */
     init {
         getMarsPhotos()
     }
 
     /**
-     * Gets Mars photos information from the Mars API Retrofit service and updates the
+     * Obtém informações de fotos da Mars do serviço Mars API Retrofit e atualiza o
      * [MarsPhoto] [List] [LiveData].
      */
     private fun getMarsPhotos() {
